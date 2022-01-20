@@ -1,0 +1,38 @@
+body {
+  font-family: "Open Sans";
+  display: flex;
+  flex-direction: column;
+}
+
+header img {
+  height: 30px;
+  width: 30px;
+}
+
+nav {
+  font-family: "Barlow Condensed";
+  display: flex;
+  width: 100%;
+  top: 0;
+  justify-content: space-evenly;
+  height: 40px;
+  position: fixed;
+  box-shadow: 0 6px 6px rgb(0 0 0 / 15%);
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 8px 20px 0px 20px;
+  color: black;
+  text-align: center;
+  height: auto;
+}
+
+nav a:hover {
+  color: rgba(255, 0, 0, 0.76);
+}
+
+h1 {
+  font-family: "Barlow Condensed";
+}

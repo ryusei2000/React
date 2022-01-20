@@ -9,13 +9,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--Icon acquired here https://icon-icons.com/icon/weight/12585 -->
+    <link rel="icon" href="%PUBLIC_URL%/weight.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+    <link href="index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -31,22 +35,30 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Lifting Recommendations</title>
+    <title>Weight Training</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav>
+        <a href="index.html"><img src="weight.ico" alt="weight logo"></a>
+        <a href="workouts.html">Workouts</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="goals.html">Goals</a>
+      </nav>
+    </header>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <section>
       <h1>Please input your lifting experience</h1>
       <div id="root"></div>
       <p>Our recommendation is that you adhere to these ranges for lifting experience.</p>
       <ol>
-        <li>Beginner</li>
-        <li>Novice</li>
-        <li>Intermediate</li>
-        <li>Advanced</li>
+        <li>Beginner: 0-24</li>
+        <li>Novice: 25-49</li>
+        <li>Intermediate: 50-74</li>
+        <li>Advanced: 75-99</li>
       </ol>
     </section>
+    <div id="paragraph"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

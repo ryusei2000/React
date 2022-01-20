@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default class Slider extends React.Component {
   state = {
     value: 0
@@ -10,7 +11,7 @@ export default class Slider extends React.Component {
   render() {
     return (
       <>
-        <input type="range" min={0} max={100} value={this.state.value} className="slider"
+        <input type="range" min={0} max={99} value={this.state.value} className="slider"
         onChange={this.handleOnChange} />
         <div className="value">{this.state.value}</div>
       </>
