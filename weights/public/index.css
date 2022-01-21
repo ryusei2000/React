@@ -36,3 +36,10 @@ nav a:hover {
 h1 {
   font-family: "Barlow Condensed";
 }
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
