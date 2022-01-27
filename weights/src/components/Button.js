@@ -1,21 +1,49 @@
 import React from 'react';
 
 // parent
-export default class Slider extends React.Component {
-  state = {
-    value: 0
+export default class Button extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {value : 0}
+
+    this.handleBeginner = this.handleBeginner.bind(this)
+    this.handleNovice = this.handleNovice.bind(this)
+    this.handleIntermediate = this.handleIntermediate.bind(this)
+    this.handleAdvanced = this.handleAdvanced.bind(this)
   }
 
-  handleOnChange = (e) => this.setState({value: e.target.value});
+  handleBeginner() {
+    this.setState({value: 1})
+  }
+
+  handleNovice() {
+    this.setState({value: 25})
+  }
+  handleIntermediate() {
+    this.setState({value: 50})
+  }
+  handleAdvanced() {
+    this.setState({value: 75})
+  }
 
   render() {
     return (
-      <>
-        <input type="range" min={0} max={99} value={this.state.value} className="slider"
-        onChange={this.handleOnChange} />
-        <div className="value">{this.state.value}</div>
-        <Paragraph experience={this.state.value}/>
-      </>
+      <div>
+          <button onClick={this.handleBeginner}>
+            Beginner
+          </button>
+          <button onClick={this.handleNovice}>
+            Novice
+          </button>
+          <button onClick={this.handleIntermediate}>
+            Intermediate
+          </button>
+          <button onClick={this.handleAdvanced}>
+            Advanced
+          </button>
+          <Paragraph experience={this.state.value} />
+      </div>
     )
   }
 }
@@ -138,7 +166,7 @@ function Novice() {
             next week. After reaching 12 reps, the lifter may want to opt to increase the
             weight after that point, and drop back down to 6-8 reps and repeat the process!
         </li>
-        </ul>
+      </ul>
     </div>
   )
 }

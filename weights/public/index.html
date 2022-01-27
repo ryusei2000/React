@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8" />
     <!--Icon acquired here https://icon-icons.com/icon/weight/12585 -->
-    <link rel="icon" href="%PUBLIC_URL%/weight.ico" />
+    <link rel="icon" href="imgs/weight.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -38,25 +39,8 @@
     <title>Weight Training</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html"><img src="weight.ico" alt="weight logo"></a>
-        <a href="workouts.html">Workouts</a>
-        <a href="nutrition.html">Nutrition</a>
-        <a href="goals.html">Goals</a>
-      </nav>
-    </header>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <section>
-      <h1>Please input your lifting experience</h1>
       <div id="root"></div>
-      <p>Our recommendation is that you adhere to these ranges for lifting experience.</p>
-      <ol>
-        <li>Beginner: 0-24</li>
-        <li>Novice: 25-49</li>
-        <li>Intermediate: 50-74</li>
-        <li>Advanced: 75-99</li>
-      </ol>
     </section>
     <!--
       This HTML file is a template.
@@ -68,9 +52,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <footer>
-      <p>Author: Ryu Sharma</p>
-      <a href="mailto:ryusei20@uw.edu">ryusei20@uw.edu</a>
-    </footer>
   </body>
 </html>
