@@ -5,20 +5,16 @@ import Button from "./Button";
 function Home() {
   return (
     <div className="home">
-      <div class="container">
-        <div class="row my-2">
-          <div class="col-lg-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
             <img
-              class="img-fluid rounded float-start mb-5 ml-0"
+              className="img-fluid rounded float-left mb-5 mr-5 ml-0 wrap"
               src="http://placehold.it/300x600"
               alt=""
             />
-          </div>
-          <div class="col-lg-8">
-            <h1 class="font-weight-light">Workouts</h1>
-            <p>
+            <h1 className="font-weight-light">Workouts</h1>
             <Button/>
-            </p>
           </div>
         </div>
       </div>

@@ -22,11 +22,6 @@ function Navigation() {
                   Nutrition
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
             </ul>
           </div>
         </div>
@@ -36,3 +31,11 @@ function Navigation() {
 }
 
 export default Navigation;
+
+// <li className="nav-item">
+//                 <NavLink className="nav-link" to="/contact">
+//                   Contact
+//                 </NavLink>
+//               </li>
+
+// removed from above
