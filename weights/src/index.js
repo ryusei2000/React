@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css'
-import Button from './components/Button';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   Navigation,
@@ -14,7 +13,6 @@ import {
 ReactDOM.render(
   <Router>
     <Navigation />
-    <Button />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />

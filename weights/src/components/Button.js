@@ -34,46 +34,27 @@ export default class Button extends React.Component {
   render() {
     return (
       <div>
-        <MContext.Consumer>
-          {(context) => (
           <button onClick={()=>{
             this.handleBeginner();
-            context.setMessage("1"); // None of this works, have to figure out redux
           }}>
             Beginner
           </button>
-          )}
-          </MContext.Consumer>
-          <MContext.Consumer>
-          {(context) => (
           <button onClick={()=>{
             this.handleNovice();
-            context.setMessage("25");
           }}>
             Novice
           </button>
-          )}
-          </MContext.Consumer>
-          <MContext.Consumer>
-          {(context) => (
           <button onClick={()=>{
             this.handleIntermediate();
-            context.setMessage("50");
           }}>
             Intermediate
           </button>
-          )}
-          </MContext.Consumer>
-          <MContext.Consumer>
-          {(context) => (
+
           <button onClick={()=>{
             this.handleAdvanced();
-            context.setMessage("75");
           }}>
             Advanced
           </button>
-          )}
-          </MContext.Consumer>
           <Paragraph experience={this.state.value} />
       </div>
     )

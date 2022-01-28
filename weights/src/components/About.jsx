@@ -15,7 +15,6 @@ function About() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">About</h1>
             <p>
-              HOWDY
             </p>
           </div>
         </div>

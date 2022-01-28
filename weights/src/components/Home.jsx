@@ -1,21 +1,23 @@
 import React from "react";
+import Button from "./Button";
+
 
 function Home() {
   return (
     <div className="home">
       <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+        <div class="row my-2">
+          <div class="col-lg-4">
             <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x300"
+              class="img-fluid rounded float-start mb-5 ml-0"
+              src="http://placehold.it/300x600"
               alt=""
             />
           </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Home</h1>
+          <div class="col-lg-8">
+            <h1 class="font-weight-light">Workouts</h1>
             <p>
-              YOOOOOOOO
+            <Button/>
             </p>
           </div>
         </div>
@@ -23,5 +25,7 @@ function Home() {
     </div>
   );
 }
+
+
 
 export default Home;
