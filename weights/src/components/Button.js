@@ -1,7 +1,10 @@
 import React from 'react';
+// import { MContext } from './Provider';
 
 // parent
 export default class Button extends React.Component {
+
+
   constructor (props) {
     super(props)
 
@@ -27,21 +30,50 @@ export default class Button extends React.Component {
     this.setState({value: 75})
   }
 
+
   render() {
     return (
       <div>
-          <button onClick={this.handleBeginner}>
+        <MContext.Consumer>
+          {(context) => (
+          <button onClick={()=>{
+            this.handleBeginner();
+            context.setMessage("1"); // None of this works, have to figure out redux
+          }}>
             Beginner
           </button>
-          <button onClick={this.handleNovice}>
+          )}
+          </MContext.Consumer>
+          <MContext.Consumer>
+          {(context) => (
+          <button onClick={()=>{
+            this.handleNovice();
+            context.setMessage("25");
+          }}>
             Novice
           </button>
-          <button onClick={this.handleIntermediate}>
+          )}
+          </MContext.Consumer>
+          <MContext.Consumer>
+          {(context) => (
+          <button onClick={()=>{
+            this.handleIntermediate();
+            context.setMessage("50");
+          }}>
             Intermediate
           </button>
-          <button onClick={this.handleAdvanced}>
+          )}
+          </MContext.Consumer>
+          <MContext.Consumer>
+          {(context) => (
+          <button onClick={()=>{
+            this.handleAdvanced();
+            context.setMessage("75");
+          }}>
             Advanced
           </button>
+          )}
+          </MContext.Consumer>
           <Paragraph experience={this.state.value} />
       </div>
     )
@@ -234,3 +266,4 @@ function Advanced() {
     </div>
   )
 }
+
