@@ -8,7 +8,10 @@ export default class Button extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = {value : 0}
+    this.state = {
+      value : 0,
+      activeItem: 'Beginner'
+    }
 
     this.handleBeginner = this.handleBeginner.bind(this)
     this.handleNovice = this.handleNovice.bind(this)
@@ -17,40 +20,48 @@ export default class Button extends React.Component {
   }
 
   handleBeginner() {
-    this.setState({value: 1})
+    this.setState({value: 1, activeItem: 'Beginner'})
   }
 
   handleNovice() {
-    this.setState({value: 25})
+    this.setState({value: 25, activeItem: 'Novice'})
   }
   handleIntermediate() {
-    this.setState({value: 50})
+    this.setState({value: 50, activeItem: 'Intermediate'})
   }
   handleAdvanced() {
-    this.setState({value: 75})
+    this.setState({value: 75, activeItem: 'Advanced'})
+  }
+
+  getClassName(id) {
+    if (id === this.state.activeItem) {
+      return "on"
+    } else {
+      return "off"
+    }
   }
 
 
   render() {
     return (
       <div>
-          <button onClick={()=>{
+          <button className={this.getClassName('Beginner')} id="Beginner" onClick={()=>{
             this.handleBeginner();
           }}>
             Beginner
           </button>
-          <button onClick={()=>{
+          <button className={this.getClassName('Novice')} id="Novice" onClick={()=>{
             this.handleNovice();
           }}>
             Novice
           </button>
-          <button onClick={()=>{
+          <button className={this.getClassName('Intermediate')} id="Intermediate" onClick={()=>{
             this.handleIntermediate();
           }}>
             Intermediate
           </button>
 
-          <button onClick={()=>{
+          <button className={this.getClassName('Advanced')} id="Advanced" onClick={()=>{
             this.handleAdvanced();
           }}>
             Advanced
@@ -66,25 +77,25 @@ class Paragraph extends React.Component {
   render() {
     if (this.props.experience < 25) {
       return(
-        <div className="Paragraph">
+        <div>
           <Beginner />
         </div>
       )
     } else if (this.props.experience < 50) {
       return(
-        <div className="Paragraph">
+        <div>
           <Novice />
         </div>
       )
     } else if (this.props.experience < 75) {
       return(
-        <div className="Paragraph">
+        <div>
           <Intermediate />
         </div>
       )
     } else {
       return(
-        <div className="Paragraph">
+        <div>
           <Advanced />
         </div>
       )

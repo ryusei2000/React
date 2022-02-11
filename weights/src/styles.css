@@ -4,7 +4,7 @@ section {
   margin-top: 50px;
 }
 
-button {
+button, .off {
   text-decoration: none;
   border: none;
   padding: 12px 40px 12px 40px;
@@ -23,6 +23,11 @@ button:focus {
   /* Scaling button to 0.98 to its original size */
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   /* Lowering the shadow */
+}
+
+.on {
+  transform: scale(0.9);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 button:active {
@@ -48,6 +53,13 @@ button:active {
   float: left;
 }
 
+.squat {
+  border: 5px solid black;
+  margin: 30px;
+  width: 550px;
+  height: 400px;
+}
+
 .footer {
-  margin-top: 20px;
+  margin-top: 30px;
 }

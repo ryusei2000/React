@@ -44,8 +44,13 @@ export default class Nutrition extends React.Component {
 
 class Paragraph extends React.Component {
   render() {
-    if (this.props.weight === 0) {
-      return(<div></div>);
+    if (this.props.weight <= 100) {
+      return(
+      <div>
+        <p>
+          Please select an appropriate weight.
+        </p>
+      </div>);
     } else {
       return(
         <div className="Paragraph">
@@ -54,10 +59,10 @@ class Paragraph extends React.Component {
             aim for around { this.props.weight * 15 } calories! If you would like
             to lose weight, you should aim for around { this.props.weight * 15 - 300 } calories.
             If you're aiming to bulk, you should aim for
-            around { this.props.weight *15 +300 } calories. </p>
+            around { this.props.weight *15 + 300 } calories. </p>
           <p>
             If you're aiming to gain muscle, you should aim to have
-            around { this.props.weight * 0.85 } grams of protein in your daily diet
+            around { Math.round(this.props.weight * 0.85) } grams of protein in your daily diet
             as a general range for protein consumption for increases in muscle mass
             is about 0.7-1.0 grams of protein per pound of body weight.
           </p>

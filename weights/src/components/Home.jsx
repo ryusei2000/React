@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -15,6 +15,11 @@ function Home() {
             />
             <h1 className="font-weight-light">Workouts</h1>
             <Button/>
+            <p>
+              If you'd like to learn more about the nutrition side of lifting,
+              check out our nutrition page!
+            </p>
+            <Link to="/about">Click here!</Link>
           </div>
         </div>
       </div>
