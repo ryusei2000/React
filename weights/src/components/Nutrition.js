@@ -32,6 +32,7 @@ export default class Nutrition extends React.Component {
             Bodyweight:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
+
           <input type="submit" value="Submit" />
         </form>
         { this.state.occur ? <Paragraph weight={this.state.value2} /> : null}
@@ -43,6 +44,9 @@ export default class Nutrition extends React.Component {
 
 class Paragraph extends React.Component {
   render() {
+    if (this.props.weight === 0) {
+      return(<div></div>);
+    } else {
       return(
         <div className="Paragraph">
           <p>
@@ -65,6 +69,7 @@ class Paragraph extends React.Component {
           </p>
         </div>
       )
+    }
   }
 }
 

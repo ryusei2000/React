@@ -22,6 +22,16 @@ function Navigation() {
                   Nutrition
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  Info
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/info">
+                  About
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

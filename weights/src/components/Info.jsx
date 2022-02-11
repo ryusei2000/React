@@ -1,20 +1,20 @@
 import React from "react";
 import Nutrition from "./Nutrition";
 
-function About() {
+function Info() {
   return (
-    <div className="about">
+    <div className="info">
       <div className="container">
         <div className="row my-5">
           <div className="col-lg-7">
             <img
-              className="chicken"
-              src="\imgs\chicken.jpg"
+              className="squat"
+              src="\imgs\squat.jpg"
               alt=""
             />
           </div>
           <div className="col-lg-5">
-            <h1 className="font-weight-light">Diet Information</h1>
+            <h1 className="font-weight-light">About this Website</h1>
               <Nutrition />
           </div>
         </div>
@@ -23,4 +23,4 @@ function About() {
   );
 }
 
-export default About;
+export default Info;

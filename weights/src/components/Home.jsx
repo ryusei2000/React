@@ -9,8 +9,8 @@ function Home() {
         <div className="row">
           <div className="col-md-12">
             <img
-              className="img-fluid rounded float-left mb-5 mr-5 ml-0 wrap"
-              src="http://placehold.it/300x600"
+              className="workout"
+              src="\imgs\workout.jpg"
               alt=""
             />
             <h1 className="font-weight-light">Workouts</h1>
