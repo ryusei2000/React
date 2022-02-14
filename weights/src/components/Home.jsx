@@ -14,7 +14,7 @@ function Home() {
               alt=""
             />
             <h1 className="font-weight-light">Workouts</h1>
-            <Button/>
+            <Button page="home"/>
             <p>
               If you'd like to learn more about the nutrition side of lifting,
               check out our nutrition page!

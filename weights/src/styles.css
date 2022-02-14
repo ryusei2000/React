@@ -18,12 +18,10 @@ button, .off {
   transition: 0.2s all;
   margin: 5px;
 }
-button:focus {
+/* button:focus {
   transform: scale(0.9);
-  /* Scaling button to 0.98 to its original size */
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-}
+} */
 
 .on {
   transform: scale(0.9);
@@ -31,10 +29,10 @@ button:focus {
   border: 3px solid black;
 }
 
-button:active {
+/* button:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
+} */
 
 .wrap {
   flex-wrap: wrap;
