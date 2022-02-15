@@ -1,6 +1,5 @@
 import React from "react";
 import Nutrition from "./Nutrition";
-import Button from "./Button";
 
 function Diet() {
   return (
@@ -17,7 +16,6 @@ function Diet() {
           <div className="col-lg-5">
             <h1 className="font-weight-light">Diet Information</h1>
               <Nutrition />
-              <Button page="diet"/>
           </div>
         </div>
       </div>
