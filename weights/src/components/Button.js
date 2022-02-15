@@ -97,7 +97,42 @@ class Paragraph extends React.Component {
 function MaintainWeight() {
   return(
     <div>
-      <p>HOWDY</p>
+      <hr/>
+      <p>
+        Having a workout routine to lose weight can be incredibly obvious,
+        however, what is not so obvious is that you need to workout to maintain
+        your weight after hitting your bodyweight goals! We'll provide you with
+        an example workout routine that you could follow in order to maintain
+        your current body weight. Our routine assumes you're working out over
+        the course of a normal week and will be structured like so.
+      </p>
+      <ul>
+        <li>Monday, Wednesday, Friday</li>
+          <ul>
+            <li>4 sets of 10 reps (repetitions) of barbel bench press</li>
+            <li>
+              3 sets of 12 reps of lat pulldowns superset with 3
+              sets of 10 reps of tricep pulldowns
+            </li>
+            <li>3 sets of 10 reps of dumbbell curls</li>
+            <li>3 sets of 15 reps of rear delt flys</li>
+            <li>
+              3 sets of 20 reps of leg curls superset with 3 sets of 20
+              reps of leg extensions
+            </li>
+            <li>3 sets of 10 reps of leg press</li>
+            <li>3 sets of 15 reps of hanging leg raises</li>
+            <li>3 sets of 15 reps of hanging knee twists</li>
+          </ul>
+        <li>Tuesday, Thursday</li>
+          <ul>
+            <li>60 minutes of moderate cardio: walking, jogging, etc.</li>
+          </ul>
+        <li>Saturday, Sunday</li>
+          <ul>
+            <li>Aim to rest for these two days! Rest days are important too!</li>
+          </ul>
+      </ul>
     </div>
   )
 }
@@ -105,7 +140,59 @@ function MaintainWeight() {
 function Bulk() {
   return(
     <div>
-      <p>HOWDY2</p>
+      <hr/>
+      <p>
+        For bulking, you want to make sure you're rigorously training and
+        aiming to push your muscles near failure each session. If enough
+        intensity is provided in each session, this workout routine should
+        be good for bulking (along with the appropriate diet of course)!
+        We also won't specify cardio, but a good warmup is essential to making
+        sure your body's ready to workout so we recommend warming up every
+        session with some form of cardio. This exercise routine is called
+        Push, Pull, Legs as you'll focus on one of those types of movements
+        each day.
+      </p>
+      <ul>
+        <li>Monday, Thursday</li>
+          <ul>
+            <li>3 sets of 6-8 reps of dumbbell bench press</li>
+            <li>3 sets of 6-8 reps of incline barbel press</li>
+            <li>3 sets of 10 reps of cable crossovers</li>
+            <li>3 sets of 10 reps of tricep pushdowns</li>
+            <li>3 sets of 10 reps of cable kickbacks</li>
+            <li>3 sets of 10 reps of skull crushers</li>
+            <li>3 sets of 12 reps of dumbbell lateral raises</li>
+            <li>3 sets of 10 reps of rear delt flys</li>
+          </ul>
+        <li>Tuesday, Friday</li>
+          <ul>
+            <li>3 sets of 6-8 reps of bentover barbel rows</li>
+            <li>3 sets of 10 reps of chest supported dumbbell rows</li>
+            <li>3 sets of 10 reps of lat pulldowns</li>
+            <li>3 sets of 10 reps of seated cable rows</li>
+            <li>3 sets of 10 reps of straight arm pulldowns</li>
+            <li>3 sets of 10 reps of dumbbell curls</li>
+            <li>3 sets of 10 reps of dumbbell spider curls</li>
+            <li>3 sets of 10 reps of concentration curls</li>
+          </ul>
+        <li>Wednesday, Saturday</li>
+          <ul>
+            <li>4 sets of 6-8 reps of barbel squats</li>
+            <li>3 sets of 10 reps of seated leg press</li>
+            <li>3 sets of 15 reps of leg curls</li>
+            <li>3 sets of 15 reps of leg extensions</li>
+            <li>3 sets of 10 reps of romanian deadlifts</li>
+            <li>3 sets of 20 reps of calf raises</li>
+          </ul>
+        <li>Sunday</li>
+          <ul>
+            <li>
+              Rest up! Take some time each week in order to rest your muscles
+              in order to allow them to recover for the next week. Recovery is
+              what allows your muscles to grow!
+            </li>
+          </ul>
+      </ul>
     </div>
   )
 }
@@ -113,7 +200,85 @@ function Bulk() {
 function Cut() {
   return(
     <div>
-      <p>HOWDY3</p>
+      <hr/>
+      <p>
+        For cutting, you want to emphasize being in a caloric deficit and
+        burning calories through exercise helps maintain that deficit! In
+        addition, having more muscle can help raise your natural metabolism
+        as your body will need more energy to be able to fuel those muscles
+        in your daily life. So our goal will be to combine cardio and
+        strengthening your muscles in order to lose mostly fat and try to
+        maintain as much muscle mass as possible. There are two different ways
+        we can perform cardio (HIIT vs. Low Intensity Cardio) and each has their
+        own set of pros and cons.
+      </p>
+      <ul>
+        <li>HIIT</li>
+          <ul>
+            <li>Pros:</li>
+            <ul>
+              <li>Burns more calories in a shorter period</li>
+              <li>Can be targeted to specific sports</li>
+            </ul>
+            <li>Cons:</li>
+            <ul>
+              <li>Harder to sustain for people out of shape</li>
+              <li>Doesn't train endurance as much</li>
+            </ul>
+          </ul>
+        <li>Low Intensity Cardio</li>
+          <ul>
+            <li>Pros:</li>
+            <ul>
+              <li>Easier to sustain for most people</li>
+              <li>Helps train overall cardiovascular endurance</li>
+            </ul>
+            <li>Cons:</li>
+            <ul>
+              <li>Can be less interesting due to long intervals</li>
+              <li>Won't be working on training fast twitch muscles</li>
+            </ul>
+          </ul>
+      </ul>
+      <p>An example schedule of someone who's aiming to cut could be:</p>
+      <ul>
+        <li>Monday, Wednesday, Friday</li>
+        <ul>
+            <li>4 sets of 10 reps (repetitions) of barbel bench press</li>
+            <li>
+              3 sets of 12 reps of lat pulldowns superset with 3
+              sets of 10 reps of tricep pulldowns
+            </li>
+            <li>3 sets of 10 reps of dumbbell curls</li>
+            <li>3 sets of 15 reps of rear delt flys</li>
+            <li>
+              3 sets of 20 reps of leg curls superset with 3 sets of 20
+              reps of leg extensions
+            </li>
+            <li>3 sets of 10 reps of leg press</li>
+            <li>3 sets of 15 reps of hanging leg raises</li>
+            <li>3 sets of 15 reps of hanging knee twists</li>
+          </ul>
+        <li>Tuesday, Thursday, Saturday</li>
+        <ul>
+          <li>Either HIIT or Low Intensity Cardio</li>
+          <li>
+            HIIT could be circuit running where you run for a minute at around
+            70% of your max speed then run for 30 seconds at around 90%. You
+            would repeat this pattern for about 10 times. That's an example of
+            a HIIT circuit routine.
+          </li>
+          <li>
+            An example of Low Intensity Cardio training could be jogging or biking
+            for 60 minutes at a comfortable pace, which allows your body to burn
+            calories over a long period of continuous motion.
+          </li>
+        </ul>
+        <li>Sunday</li>
+        <ul>
+          <li>Rest up! Rest is important for muscle growth and recovery.</li>
+        </ul>
+      </ul>
     </div>
   )
 }

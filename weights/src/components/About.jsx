@@ -18,8 +18,8 @@ function About() {
               This website provides information about working out and nutrition.
               We're focused on providing all levels of lifters with accurate
               and helpful information! Our lifting tips are catered for each
-              experience level, however, tips at lower experience levels can
-              still be useful for those who are more familiar with lifting.
+              lifter's long term goal, however, you can use any exercise routine
+              you personally enjoy, regardless of your goal.
             </p>
             <p>
               We also want to help lifters determine their estimated calorie
