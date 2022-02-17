@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 // import { MContext } from './Provider';
 
 // parent
@@ -39,29 +40,41 @@ export default class Button extends React.Component {
   render() {
     if (this.props.page === "home") {
       return (
-        <div>
-            <button className={this.getClassName('Maintain')} id="Maintain" onClick={()=>{
-              this.handleClick("Maintain");
-            }}>
-              Maintain
-            </button>
-            <button className={this.getClassName('Bulk')} id="Bulk" onClick={()=>{
-              this.handleClick("Bulk");
-            }}>
-              Bulk
-            </button>
-            <button className={this.getClassName('Cut')} id="Cut" onClick={()=>{
-              this.handleClick("Cut");
-            }}>
-              Cut
-            </button>
+        <div >
+          <div id="temp1">
+            <div>
+              <button className={this.getClassName('Maintain')} id="Maintain" onClick={()=>{
+                this.handleClick("Maintain");
+              }}> Maintain </button>
+              <button className={this.getClassName('Bulk')} id="Bulk" onClick={()=>{
+                this.handleClick("Bulk");
+              }}> Bulk </button>
+              <button className={this.getClassName('Cut')} id="Cut" onClick={()=>{
+                this.handleClick("Cut");
+              }}> Cut </button>
+            </div>
+            <div>
+              <Link to='/about'>
+              <button className="right">Nutrition</button>
+              </Link>
+            </div>
+          </div>
+
             <Paragraph focus={this.state.activeItem} />
         </div>
       )
     } else {
       return(
         <div>
-          <p>{this.state.activeItem}</p>
+          <button className={this.getClassName('Maintain')} id="Maintain" onClick={()=>{
+            this.handleClick("Maintain");
+          }}> Maintain </button>
+          <button className={this.getClassName('Bulk')} id="Bulk" onClick={()=>{
+            this.handleClick("Bulk");
+          }}> Bulk </button>
+          <button className={this.getClassName('Cut')} id="Cut" onClick={()=>{
+            this.handleClick("Cut");
+          }}> Cut </button>
         </div>
       )
     }
