@@ -73,3 +73,20 @@ button, .off {
   display: flex;
   justify-content: space-between;
 }
+
+.graphics {
+  height: 200px;
+  width: 300px;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  width: 33%;
+}
+
+.days {
+  font-size: 32px;
+}

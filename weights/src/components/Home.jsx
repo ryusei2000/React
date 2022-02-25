@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button";
-import { Link } from 'react-router-dom';
 
 // currently have an issue with button not aligning to the right, maybe ask andy
 function Home() {

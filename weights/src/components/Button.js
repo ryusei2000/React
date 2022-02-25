@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { confirm } from "react-confirm-box";
 // import { MContext } from './Provider';
 
 // parent
@@ -10,10 +11,13 @@ export default class Button extends React.Component {
     super(props)
 
     this.state = {
-      activeItem: 'Maintain'
+      activeItem: 'Maintain',
+      confirm: "false"
     }
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.changeConfirm = this.handleClick.bind(this);
+    // this.handleClickNo = this.handleClickNo.bind(this);
   }
 
   componentDidMount() {
@@ -24,8 +28,21 @@ export default class Button extends React.Component {
   }
 
   handleClick(id) {
-    this.setState({activeItem: id});
-    localStorage.setItem("my_value", id);
+    // if (this.state.confirm === "true") {
+      this.setState({activeItem: id});
+      localStorage.setItem("my_value", id);
+    // } else {
+    //   this.setState({activeItem: id});
+    // }
+  }
+
+  // handleClickNo(id) {
+  //   this.setstate({activeItem: id});
+  //   localStorage.setItem("my_value", null);
+  // }
+
+  changeConfirm() {
+    this.setState({confirm: "true"});
   }
 
   getClassName(id) {
@@ -57,6 +74,17 @@ export default class Button extends React.Component {
               <Link to='/about'>
               <button className="right">Nutrition</button>
               </Link>
+            </div>
+            <div>
+              <button
+                className='delete button'
+                onClick={() => {
+                const confirmBox = window.confirm(
+                  "Heads up! This website stores cookies to better your experience."
+                )
+              }}>
+                Cookie Confirmation
+              </button>
             </div>
           </div>
 
@@ -119,33 +147,79 @@ function MaintainWeight() {
         your current body weight. Our routine assumes you're working out over
         the course of a normal week and will be structured like so.
       </p>
-      <ul>
-        <li>Monday, Wednesday, Friday</li>
-          <ul>
-            <li>4 sets of 10 reps (repetitions) of barbel bench press</li>
-            <li>
-              3 sets of 12 reps of lat pulldowns superset with 3
-              sets of 10 reps of tricep pulldowns
-            </li>
-            <li>3 sets of 10 reps of dumbbell curls</li>
-            <li>3 sets of 15 reps of rear delt flys</li>
-            <li>
-              3 sets of 20 reps of leg curls superset with 3 sets of 20
-              reps of leg extensions
-            </li>
-            <li>3 sets of 10 reps of leg press</li>
-            <li>3 sets of 15 reps of hanging leg raises</li>
-            <li>3 sets of 15 reps of hanging knee twists</li>
-          </ul>
-        <li>Tuesday, Thursday</li>
-          <ul>
-            <li>60 minutes of moderate cardio: walking, jogging, etc.</li>
-          </ul>
-        <li>Saturday, Sunday</li>
-          <ul>
-            <li>Aim to rest for these two days! Rest days are important too!</li>
-          </ul>
-      </ul>
+      <p className='days'>Monday, Wednesday, Friday</p>
+      <table>
+        <tr>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Exercise</th>
+          <th>Demo</th>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>10</td>
+          <td>Barbell Bench Press</td>
+          <td><img src='/imgs/barbelbench.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>12</td>
+          <td>Lat Pulldowns</td>
+          <td><img src='/imgs/latpulldown.jpg' alt='lat pulldown' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Tricep Pushdowns</td>
+          <td><img src='/imgs/triceppushdown.jpg' alt='tricep pushdown' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Dumbbell Curls</td>
+          <td><img src='/imgs/curl.jpg' alt='dumbbell curl' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Rear Delt Flys</td>
+          <td><img src='/imgs/reardelt.jpg' alt='rear delt flys' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+          <td>Leg Curls</td>
+          <td><img src='/imgs/legcurl.jpg' alt='leg curl' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+          <td>Leg Extensions</td>
+          <td><img src='/imgs/legextension.jpg' alt='leg extension' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Leg Press</td>
+          <td><img src='/imgs/legpress.jpg' alt='leg press' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Hanging Leg Raises</td>
+          <td><img src='/imgs/hangingleg.jpg' alt='hanging leg raises' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Hanging Knee Twists</td>
+          <td><img src='/imgs/hangingknee.jpg' alt='hanging knee twists' className='graphics'></img></td>
+        </tr>
+      </table>
+      <p className='days'>Tuesday, Thursday</p>
+      <p>60 minutes of moderate cardio: walking, jogging, etc.</p>
+      <p className='days'>Saturday, Sunday</p>
+      <p>Aim to rest for these two days! Rest days are important too!</p>
     </div>
   )
 }
@@ -165,47 +239,171 @@ function Bulk() {
         Push, Pull, Legs as you'll focus on one of those types of movements
         each day.
       </p>
-      <ul>
-        <li>Monday, Thursday</li>
-          <ul>
-            <li>3 sets of 6-8 reps of dumbbell bench press</li>
-            <li>3 sets of 6-8 reps of incline barbel press</li>
-            <li>3 sets of 10 reps of cable crossovers</li>
-            <li>3 sets of 10 reps of tricep pushdowns</li>
-            <li>3 sets of 10 reps of cable kickbacks</li>
-            <li>3 sets of 10 reps of skull crushers</li>
-            <li>3 sets of 12 reps of dumbbell lateral raises</li>
-            <li>3 sets of 10 reps of rear delt flys</li>
-          </ul>
-        <li>Tuesday, Friday</li>
-          <ul>
-            <li>3 sets of 6-8 reps of bentover barbel rows</li>
-            <li>3 sets of 10 reps of chest supported dumbbell rows</li>
-            <li>3 sets of 10 reps of lat pulldowns</li>
-            <li>3 sets of 10 reps of seated cable rows</li>
-            <li>3 sets of 10 reps of straight arm pulldowns</li>
-            <li>3 sets of 10 reps of dumbbell curls</li>
-            <li>3 sets of 10 reps of dumbbell spider curls</li>
-            <li>3 sets of 10 reps of concentration curls</li>
-          </ul>
-        <li>Wednesday, Saturday</li>
-          <ul>
-            <li>4 sets of 6-8 reps of barbel squats</li>
-            <li>3 sets of 10 reps of seated leg press</li>
-            <li>3 sets of 15 reps of leg curls</li>
-            <li>3 sets of 15 reps of leg extensions</li>
-            <li>3 sets of 10 reps of romanian deadlifts</li>
-            <li>3 sets of 20 reps of calf raises</li>
-          </ul>
-        <li>Sunday</li>
-          <ul>
-            <li>
-              Rest up! Take some time each week in order to rest your muscles
-              in order to allow them to recover for the next week. Recovery is
-              what allows your muscles to grow!
-            </li>
-          </ul>
-      </ul>
+      <p className='days'>Monday, Thursday</p>
+      <table>
+        <tr>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Exercise</th>
+          <th>Demo</th>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>6-8</td>
+          <td>Barbell Bench Press</td>
+          <td><img src='/imgs/barbelbench.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>6-8</td>
+          <td>Barbell Bench Press</td>
+          <td><img src='/imgs/inclinebench.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Cable Crossovers</td>
+          <td><img src='/imgs/cablecross.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Tricep Pushdowns</td>
+          <td><img src='/imgs/triceppushdown.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Tricep Kickbacks</td>
+          <td><img src='/imgs/tricepkickback.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Skull Crushers</td>
+          <td><img src='/imgs/skullcrushers.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>12</td>
+          <td>Dumbbell Lateral Raises</td>
+          <td><img src='/imgs/dumbbelllatraise.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Rear Delt Flys</td>
+          <td><img src='/imgs/reardelt.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+      </table>
+      <p className='days'>Tuesday, Thursday</p>
+      <table>
+        <tr>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Exercise</th>
+          <th>Demo</th>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>6-8</td>
+          <td>Bentover Barbell Row</td>
+          <td><img src='/imgs/barbelrow.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Chest Supported Dumbbell Row</td>
+          <td><img src='/imgs/chestsupprow.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Lat Pulldowns</td>
+          <td><img src='/imgs/latpulldown.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Seated Cable Row</td>
+          <td><img src='/imgs/seatedcable.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Straight Arm Pulldowns</td>
+          <td><img src='/imgs/straightarmpull.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Dumbbell Curls</td>
+          <td><img src='/imgs/curl.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Dumbbell Spider Curls</td>
+          <td><img src='/imgs/spidercurl.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Concentration Curls</td>
+          <td><img src='/imgs/concurl.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+      </table>
+      <p className='days'>Wednesday, Saturday</p>
+      <table>
+        <tr>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Exercise</th>
+          <th>Demo</th>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>6-8</td>
+          <td>Barbell Squats</td>
+          <td><img src='/imgs/barbellsquat.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Seated Leg Press</td>
+          <td><img src='/imgs/legpress.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Leg Curls</td>
+          <td><img src='/imgs/legcurl.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Leg Extensions</td>
+          <td><img src='/imgs/legextension.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Romanian Deadlift</td>
+          <td><img src='/imgs/romdeadlift.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+          <td>Calf Raises</td>
+          <td><img src='/imgs/calfraises.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+      </table>
+      <p className='days'>Sunday</p>
+      <p>
+        Rest up! Take some time each week in order to rest your muscles
+        in order to allow them to recover for the next week. Recovery is
+        what allows your muscles to grow!
+      </p>
     </div>
   )
 }
@@ -254,44 +452,92 @@ function Cut() {
           </ul>
       </ul>
       <p>An example schedule of someone who's aiming to cut could be:</p>
+      <p className='days'>Monday, Wednesday, Friday</p>
+      <table>
+        <tr>
+          <th>Sets</th>
+          <th>Reps</th>
+          <th>Exercise</th>
+          <th>Demo</th>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>10</td>
+          <td>Barbell Bench Press</td>
+          <td><img src='/imgs/barbelbench.jpg' alt='barbel bench' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>12</td>
+          <td>Lat Pulldowns</td>
+          <td><img src='/imgs/latpulldown.jpg' alt='lat pulldown' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Tricep Pushdowns</td>
+          <td><img src='/imgs/triceppushdown.jpg' alt='tricep pushdown' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Dumbbell Curls</td>
+          <td><img src='/imgs/curl.jpg' alt='dumbbell curl' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Rear Delt Flys</td>
+          <td><img src='/imgs/reardelt.jpg' alt='rear delt flys' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+          <td>Leg Curls</td>
+          <td><img src='/imgs/legcurl.jpg' alt='leg curl' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>20</td>
+          <td>Leg Extensions</td>
+          <td><img src='/imgs/legextension.jpg' alt='leg extension' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>10</td>
+          <td>Leg Press</td>
+          <td><img src='/imgs/legpress.jpg' alt='leg press' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Hanging Leg Raises</td>
+          <td><img src='/imgs/hangingleg.jpg' alt='hanging leg raises' className='graphics'></img></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>15</td>
+          <td>Hanging Knee Twists</td>
+          <td><img src='/imgs/hangingknee.jpg' alt='hanging knee twists' className='graphics'></img></td>
+        </tr>
+      </table>
+      <p className='days'>Tuesday, Thursday, Saturday</p>
       <ul>
-        <li>Monday, Wednesday, Friday</li>
-        <ul>
-            <li>4 sets of 10 reps (repetitions) of barbel bench press</li>
-            <li>
-              3 sets of 12 reps of lat pulldowns superset with 3
-              sets of 10 reps of tricep pulldowns
-            </li>
-            <li>3 sets of 10 reps of dumbbell curls</li>
-            <li>3 sets of 15 reps of rear delt flys</li>
-            <li>
-              3 sets of 20 reps of leg curls superset with 3 sets of 20
-              reps of leg extensions
-            </li>
-            <li>3 sets of 10 reps of leg press</li>
-            <li>3 sets of 15 reps of hanging leg raises</li>
-            <li>3 sets of 15 reps of hanging knee twists</li>
-          </ul>
-        <li>Tuesday, Thursday, Saturday</li>
-        <ul>
-          <li>Either HIIT or Low Intensity Cardio</li>
-          <li>
-            HIIT could be circuit running where you run for a minute at around
-            70% of your max speed then run for 30 seconds at around 90%. You
-            would repeat this pattern for about 10 times. That's an example of
-            a HIIT circuit routine.
-          </li>
-          <li>
-            An example of Low Intensity Cardio training could be jogging or biking
-            for 60 minutes at a comfortable pace, which allows your body to burn
-            calories over a long period of continuous motion.
-          </li>
-        </ul>
-        <li>Sunday</li>
-        <ul>
-          <li>Rest up! Rest is important for muscle growth and recovery.</li>
-        </ul>
+        <li>Either HIIT or Low Intensity Cardio</li>
+        <li>
+          HIIT could be circuit running where you run for a minute at around
+          70% of your max speed then run for 30 seconds at around 90%. You
+          would repeat this pattern for about 10 times. That's an example of
+          a HIIT circuit routine.
+        </li>
+        <li>
+          An example of Low Intensity Cardio training could be jogging or biking
+          for 60 minutes at a comfortable pace, which allows your body to burn
+          calories over a long period of continuous motion.
+        </li>
       </ul>
+      <p className='days'>Sunday</p>
+      <p>Rest up! Rest is important for muscle growth and recovery.</p>
     </div>
   )
 }
