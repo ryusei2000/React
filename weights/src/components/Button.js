@@ -1,6 +1,6 @@
 import React from 'react';
+import { Cookies, CookiesProvider } from 'react-cookie';
 import { Link } from "react-router-dom";
-import { confirm } from "react-confirm-box";
 // import { MContext } from './Provider';
 
 // parent
@@ -17,23 +17,26 @@ export default class Button extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.changeConfirm = this.handleClick.bind(this);
-    // this.handleClickNo = this.handleClickNo.bind(this);
   }
 
   componentDidMount() {
-    const storedValue = localStorage.getItem("my_value");
-    if (storedValue) {
-      this.setState({ activeItem: storedValue });
+    const storedValue2 = sessionStorage.getItem("my_value");
+    if (storedValue2) {
+      this.setState({ activeItem: storedValue2 });
+    } else {
+      this.setState({ activeItem: 'Maintain' });
     }
   }
 
   handleClick(id) {
-    // if (this.state.confirm === "true") {
+    const storedValue2 = sessionStorage.getItem("my_value");
+    if (storedValue2) {
+      this.setState({activeItem: id});
+      sessionStorage.setItem("my_value", id);
+    } else {
       this.setState({activeItem: id});
       localStorage.setItem("my_value", id);
-    // } else {
-    //   this.setState({activeItem: id});
-    // }
+     }
   }
 
   // handleClickNo(id) {
@@ -75,19 +78,7 @@ export default class Button extends React.Component {
               <button className="right">Nutrition</button>
               </Link>
             </div>
-            <div>
-              <button
-                className='delete button'
-                onClick={() => {
-                const confirmBox = window.confirm(
-                  "Heads up! This website stores cookies to better your experience."
-                )
-              }}>
-                Cookie Confirmation
-              </button>
-            </div>
           </div>
-
             <Paragraph focus={this.state.activeItem} />
         </div>
       )

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Cookies from "./Cookies";
 
 // currently have an issue with button not aligning to the right, maybe ask andy
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Cookies />
     </div>
   );
 }

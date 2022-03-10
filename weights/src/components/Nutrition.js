@@ -57,7 +57,7 @@ export default class Nutrition extends React.Component {
 // continue on with this trend (do this for the other values)
 class Paragraph extends React.Component {
   render() {
-    if (localStorage.my_value === "Maintain") {
+    if (localStorage.my_value === "Maintain" || sessionStorage.my_value === "Maintain") {
       return(
       <div>
         <p>For {this.props.range}:</p>
@@ -78,7 +78,7 @@ class Paragraph extends React.Component {
           (around one cup).
         </p>
       </div>);
-    } else if (localStorage.my_value === "Bulk") {
+    } else if (localStorage.my_value === "Bulk" || sessionStorage.my_value === "Bulk") {
       return(
         <div className="Paragraph">
           <p>For {this.props.range}:</p>

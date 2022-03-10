@@ -90,3 +90,68 @@ td {
 .days {
   font-size: 32px;
 }
+
+#cookie-policy {
+  background: #003B5C;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 48px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  opacity: 0.8;
+  /* display: none; */
+}
+
+.cookie {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cookie__btn--accept {
+  background-color: #003B5C;
+  color: #FFFFFF;
+  font-size: 1rem;
+  border: 2px solid #FFFFFF;
+  padding: 12px 16px;
+  font-weight: normal;
+  top: 64px;
+  right: 10px;
+  float: right;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .cookie__btn--accept {
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.cookie__btn--accept::after {
+  display: none;
+}
+
+.cookie__btn--accept:hover {
+  background-color: #0079BF;
+}
+
+.cookie__btn--accept:focus {
+  outline: 1px dotted #0079BF;
+  outline-offset: 2px;
+  background-color: #0079BF;
+}
+
+.cookie__btn--accept:active {
+  background-color: #003B5C;
+}
+
+.cookie__copy, #cookie-policy-heading {
+  width: 67%;
+  color: #FFFFFF;
+  display: inline-block;
+}
+
+.gone {
+  display: none;
+}
